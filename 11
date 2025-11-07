@@ -1,0 +1,64 @@
+#include <iostream>
+
+int main() {
+	setlocale(LC_ALL, "RU");
+	using namespace std;
+
+
+	int menu; // меню
+	int len; //длина
+	char tex; //текстура
+	int num = 0;
+
+	cout << "Гиометрические фигуры" << endl << "[1] Линия" << endl << "выход" << endl << "Выберите фигуру: ";
+	cin >> menu;
+
+	switch (menu) {
+	case 1: {
+		system("cls");
+		cout << "Линия"<< endl << "[1] Горизонтальная" << endl << "[2] Вертикальная" << endl << "Выберете тип: ";
+		cin >> menu;
+		switch (menu) {
+		//горизонтальная
+		case 1:{
+			cout << "длина: ";
+			cin >> len;
+
+			cout << "текстура: ";
+			cin >> tex;
+
+			while (num != len) {
+				cout << tex;
+				num++;
+			}
+
+		}
+        //вертикальная
+		case 2: {
+			cout << "длина: ";
+			cin >> len;
+
+			cout << "текстура: ";
+			cin >> tex;
+
+			while (num != len) {
+				cout << tex << endl;
+				num++;
+			}
+		}
+		}
+
+
+	}
+	case 2: {
+		return 0;
+	}
+	default:{
+		cout << "нет такого действия";
+	}
+	}
+
+
+
+	return 0;
+}
