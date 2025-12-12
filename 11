@@ -6,23 +6,23 @@ int main() {
 
 
 	int menu;	 // меню
-	int len;	 //длина
-	int wid;	 //ширина
+	int num1;	 //высота
+	int num2;	 //ширина
 	char tex;	 //текстура
 	int num = 0;
 
 	cout << "Гиометрические фигуры" << endl;
 	cout << "[1] Линия" << endl;
-	cout << "[2]Квадрат" << endl; 
-	cout << "[3]Прямоугольник" << endl;
-	cout << "[4]Треугольник" << endl;
-	cout << "[5]Решетка" << endl;
-	cout << "[6]Крестик" << endl;
-	cout << "[7]Плюс" << endl;
-	cout << "[8]Ромб" << endl;
-	cout << "[9]Змейка" << endl;
-	cout << "[10]Рекурсивный квадрат" << endl;
-	cout << "[11]Выход" << endl;
+	cout << "[2] Квадрат" << endl;
+	cout << "[3] Прямоугольник" << endl;
+	cout << "[4] Треугольник" << endl;
+	cout << "[5] Решетка" << endl;
+	cout << "[6] Крестик" << endl;
+	cout << "[7] Плюс" << endl;
+	cout << "[8] Ромб" << endl;
+	cout << "[9] Змейка" << endl;
+	cout << "[10] Рекурсивный квадрат" << endl;
+	cout << "[11] Выход" << endl;
 	cout << "Выберите фигуру: ";
 	cin >> menu;
 
@@ -39,12 +39,12 @@ int main() {
 			//горизонтальная
 		case 1: {
 			cout << "длина: ";
-			cin >> len;
+			cin >> num1;
 
 			cout << "текстура: ";
 			cin >> tex;
 
-			while (num != len) {
+			while (num != num1) {
 				cout << tex;
 				num++;
 			}
@@ -53,12 +53,12 @@ int main() {
 			  //вертикальная
 		case 2: {
 			cout << "длина: ";
-			cin >> len;
+			cin >> num1;
 
 			cout << "текстура: ";
 			cin >> tex;
 
-			while (num != len) {
+			while (num != num1) {
 				cout << tex << endl;
 				num++;
 			}
@@ -67,17 +67,134 @@ int main() {
 	}
 		  //квадрат
 	case 2: {
-		while (true) {
-			cout << " 42 ";
+		system("cls");
+		cout << "квадрат" << endl;
+		cout << "[1]заполненый" << endl << "[2]пустой" << endl;
+		cout << "выберете тип: ";
+		cin >> menu;
+		switch (menu) {
+		case 1: {
+			system("cls");
+			cout << "заполненый квадрат" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура: ";
+			cin >> tex;
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					cout << tex << " ";
+				}
+				cout << endl;
+			}
+		}
+		case 2: {
+			system("cls");
+			cout << "пустой квадрат" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура: ";
+			cin >> tex;
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					if (x == 0 || x == num1 - 1 || y == 0 || y == num1 - 1) {
+						cout << tex << " ";
+					}
+					else {
+						cout << "  ";
+					}
+				}
+				cout << endl;
+			}
+
+		}
 		}
 	}
 		  //Прямоугольник
 	case 3: {
+		system("cls");
+		cout << "прямоугольник" << endl;
+		cout << "[1]заполненый" << endl << "[2]пустой" << endl;
+		cout << "выберете тип: ";
+		cin >> menu;
+		switch (menu) {
+		case 1: {
+			system("cls");
+			cout << "заполненый прямоугольник" << endl;
+			cout << "высота: ";
+			cin >> num1;
+			cout << "ширина: ";
+			cin >> num2;
+			cout << "текстура: ";
+			cin >> tex;
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num2; x++) {
+					cout << tex << " ";
+				}
+				cout << endl;
+			}
+			break;
+		}
+		case 2: {
+			system("cls");
 
+			cout << "пустой прямоугольник" << endl;
+			cout << "высота: ";
+			cin >> num1;
+			cout << "ширина: ";
+			cin >> num2;
+			cout << "текстура: ";
+			cin >> tex;
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num2; x++) {
+					if (x == 0 || x == num2 - 1 || y == 0 || y == num1 - 1) {
+						cout << tex << " ";
+					}
+					else {
+						cout << "  ";
+					}
+				}
+				cout << endl;
+			}
+			break;
+		}
+		}
 	}
 		  //Треугольник
 	case 4: {
+		system("cls");
 
+		cout << "треугольник" << endl;
+		cout << "[1]заполненый" << endl << "[2]пустой" << endl;
+		cout << "выберете тип: ";
+		cin >> menu;
+		switch (menu) {
+		case 1: {
+			system("cls");
+
+			cout << "заполненый треугольник" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура";
+			cin >> tex;
+			
+			for (int y; y < num1; y++) {
+				for (int x; x < num1; x++) {
+					if (x == num1 / 2 + y || y == num1/2) {
+						cout << tex << " ";
+					}
+					else{
+						cout << "  ";
+					}
+				}
+			}
+
+			break;
+		}
+		case 2: {
+
+			break;
+		}
+		}
 	}
 		  //Решетка
 	case 5: {
@@ -103,7 +220,7 @@ int main() {
 	case 10: {
 
 	}
-		  //Выход
+		   //Выход
 	case 11: {
 		return 0;
 	}
