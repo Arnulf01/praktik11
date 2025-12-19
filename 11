@@ -64,6 +64,7 @@ int main() {
 			}
 		}
 		}
+		break;
 	}
 		  //квадрат
 	case 2: {
@@ -86,6 +87,7 @@ int main() {
 				}
 				cout << endl;
 			}
+			break;
 		}
 		case 2: {
 			system("cls");
@@ -105,9 +107,10 @@ int main() {
 				}
 				cout << endl;
 			}
-
+			break;
 		}
 		}
+		break;
 	}
 		  //Прямоугольник
 	case 3: {
@@ -158,6 +161,7 @@ int main() {
 			break;
 		}
 		}
+		break;
 	}
 		  //Треугольник
 	case 4: {
@@ -174,47 +178,196 @@ int main() {
 			cout << "заполненый треугольник" << endl;
 			cout << "размер: ";
 			cin >> num1;
-			cout << "текстура";
+			cout << "текстура: ";
 			cin >> tex;
-			
-			for (int y; y < num1; y++) {
-				for (int x; x < num1; x++) {
-					if (x == num1 / 2 + y || y == num1/2) {
+
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					if (x <= num1 / 2 + y and x >= num1 / 2 - y and y <= num1 / 2) {
 						cout << tex << " ";
 					}
-					else{
-						cout << "  ";
+					else {
+						cout << "* ";
 					}
 				}
+				cout << endl;
 			}
 
 			break;
 		}
 		case 2: {
+			system("cls");
+
+			cout << "пустой треугольник" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура: ";
+			cin >> tex;
+
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					if (x == num1 / 2 + y || x == num1 / 2 - y || y == num1 / 2) {
+						cout << tex << " ";
+					}
+					else {
+						cout << "* ";
+					}
+				}
+				cout << endl;
+			}
 
 			break;
 		}
 		}
+		break;
 	}
 		  //Решетка
 	case 5: {
+		system("cls");
 
+		cout << "Решетка" << endl;
+		cout << "размер: ";
+		cin >> num1;
+		cout << "текстура: ";
+		cin >> tex;
+
+		for (int y = 0; y < num1; y++) {
+			for (int x = 0; x < num1; x++) {
+				if (x == num1 / 3 - 1 || x == num1 / 3 * 2 - 1 || x == num1 / 3 * 3 - 1 || y == num1 / 3 - 1 || y == num1 / 3 * 2 - 1 || y == num1 / 3 * 3 - 1) {
+					cout << tex << " ";
+				}
+				else {
+					cout << "* ";
+				}
+			}
+			cout << endl;
+		}
+		break;
 	}
 		  //Крестик
 	case 6: {
+		system("cls");
 
+		cout << "Кестик" << endl;
+		cout << "размер: ";
+		cin >> num1;
+		cout << "текстура: ";
+		cin >> tex;
+
+		for (int y = 0; y < num1; y++) {
+			for (int x = 0; x < num1; x++) {
+				if (x == num1 - y - 1 || x == y) {
+					cout << tex << " ";
+				}
+				else {
+					cout << "* ";
+				}
+			}
+			cout << endl;
+		}
+		break;
 	}
 		  //Плюс
 	case 7: {
+		system("cls");
 
+		cout << "Плюс" << endl;
+		cout << "размер: ";
+		cin >> num1;
+		cout << "текстура: ";
+		cin >> tex;
+
+		for (int y = 0; y < num1; y++) {
+			for (int x = 0; x < num1; x++) {
+				if (x == num1 / 2 || y == num1 / 2) {
+					cout << tex << " ";
+				}
+				else {
+					cout << "* ";
+				}
+			}
+			cout << endl;
+		}
+		break;
 	}
 		  //Ромб
 	case 8: {
+		system("cls");
 
+		cout << "Ромб" << endl;
+		cout << "[1]заполненый" << endl << "[2]пустой" << endl;
+		cout << "выберете тип: ";
+		cin >> menu;
+		switch (menu) {
+		case 1: {
+			system("cls");
+
+			cout << "заполненый ромб" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура: ";
+			cin >> tex;
+			
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					if (x <= num1 / 2 + y and x >= num1 / 2 - y and y <= num1 / 2 + x and y <= num1 / 2 + num1 - x - 1) {
+						cout << tex << " ";
+					}
+					else{
+						cout << "* ";
+					}
+				}
+				cout << endl;
+			}
+			break;
+		}
+		case 2: {
+			system("cls");
+
+			cout << "заполненый ромб" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура: ";
+			cin >> tex;
+
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					if (x == num1 / 2 + y || x == num1 / 2 - y || y == num1 / 2 + x || y == num1 / 2 + num1 - x - 1) {
+						cout << tex << " ";
+					}
+					else {
+						cout << "* ";
+					}
+				}
+				cout << endl;
+			}
+			break;
+		}
+		}
+		break;
 	}
 		  //Змейка
 	case 9: {
+		system("cls");
 
+		cout << "Змейка" << endl;
+		cout << "размер: ";
+		cin >> num1;
+		cout << "текстура: ";
+		cin >> tex;
+
+		for (int y = 0; y < num1; y++) {
+			for (int x = 0; x < num1; x++) {
+				if (y % 2 == 0 || ) {
+					cout << tex << " ";
+				}
+				else {
+					cout << "* ";
+				}
+			}
+			cout << endl;
+		}
+		break;
 	}
 		  //Рекурсивный квадрат
 	case 10: {
