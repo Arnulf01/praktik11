@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 int main() {
@@ -9,6 +10,7 @@ int main() {
 	int num1;	 //высота
 	int num2;	 //ширина
 	char tex;	 //текстура
+	bool f = false;
 	int num = 0;
 
 	cout << "Гиометрические фигуры" << endl;
@@ -307,13 +309,13 @@ int main() {
 			cin >> num1;
 			cout << "текстура: ";
 			cin >> tex;
-			
+
 			for (int y = 0; y < num1; y++) {
 				for (int x = 0; x < num1; x++) {
-					if (x <= num1 / 2 + y and x >= num1 / 2 - y and y <= num1 / 2 + x and y <= num1 / 2 + num1 - x - 1) {
+					if (x <= num1 / 2 + y && x >= num1 / 2 - y && y <= num1 / 2 + x && y <= num1 / 2 + num1 - x - 1) {
 						cout << tex << " ";
 					}
-					else{
+					else {
 						cout << "* ";
 					}
 				}
@@ -324,7 +326,7 @@ int main() {
 		case 2: {
 			system("cls");
 
-			cout << "заполненый ромб" << endl;
+			cout << "пустой ромб" << endl;
 			cout << "размер: ";
 			cin >> num1;
 			cout << "текстура: ";
@@ -358,12 +360,21 @@ int main() {
 
 		for (int y = 0; y < num1; y++) {
 			for (int x = 0; x < num1; x++) {
-				if (y % 2 == 0 || ) {
-					cout << tex << " ";
+				if (y % 2 == 0) {
+					cout << "\x1b[92m" << tex << "\x1b[0m ";
+				}
+				else if (f == true && x == num1 - 1) {
+					cout << "\x1b[92m" << tex << "\x1b[0m ";
+				}
+				else if(f == false && x == 0) {
+					cout << "\x1b[92m" << tex << "\x1b[0m ";
 				}
 				else {
-					cout << "* ";
+					cout << "\x1b[90m*\x1b[0m ";
 				}
+			}
+			if (y != 0 && y % 2 == 0) {
+				f = !f;
 			}
 			cout << endl;
 		}
@@ -371,7 +382,19 @@ int main() {
 	}
 		  //Рекурсивный квадрат
 	case 10: {
-
+		system("cls");
+		cout << "рекурсивный квадрат" << endl;
+		cout << "размер: ";
+		cin >> num1;
+		cout << "текстура: ";
+		cin >> tex;
+		for (int y = 0; y < num1; y++) {
+			for (int x = 0; x < num1; x++) {
+				 
+			}
+			cout << endl;
+		}
+		break;
 	}
 		   //Выход
 	case 11: {
