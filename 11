@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 int main() {
@@ -23,8 +22,10 @@ int main() {
 	cout << "[7] Плюс" << endl;
 	cout << "[8] Ромб" << endl;
 	cout << "[9] Змейка" << endl;
-	cout << "[10] Рекурсивный квадрат" << endl;
-	cout << "[11] Выход" << endl;
+	cout << "[10] Рекурсивный квадрат(не готово)" << endl;
+	cout << "[11] четверть квадрата" << endl;
+	cout << "[12] четыре четверти" << endl;
+	cout << "[13] Выход" << endl;
 	cout << "Выберите фигуру: ";
 	cin >> menu;
 
@@ -185,7 +186,7 @@ int main() {
 
 			for (int y = 0; y < num1; y++) {
 				for (int x = 0; x < num1; x++) {
-					if (x <= num1 / 2 + y and x >= num1 / 2 - y and y <= num1 / 2) {
+					if (x <= num1 / 2 + y && x >= num1 / 2 - y && y <= num1 / 2) {
 						cout << tex << " ";
 					}
 					else {
@@ -366,7 +367,7 @@ int main() {
 				else if (f == true && x == num1 - 1) {
 					cout << "\x1b[92m" << tex << "\x1b[0m ";
 				}
-				else if(f == false && x == 0) {
+				else if (f == false && x == 0) {
 					cout << "\x1b[92m" << tex << "\x1b[0m ";
 				}
 				else {
@@ -390,14 +391,84 @@ int main() {
 		cin >> tex;
 		for (int y = 0; y < num1; y++) {
 			for (int x = 0; x < num1; x++) {
-				 
+				if (y % 2 == 0 && x <= num1 - y - 1 ){
+					cout << tex << " ";
+				}
+				else
+				{
+					cout << "* ";
+				}
 			}
 			cout << endl;
 		}
 		break;
 	}
-		   //Выход
+		   //четверть квадрата
 	case 11: {
+		system("cls");
+
+		cout << "четверть квадрата" << endl;
+		cout << "[1]заполненый" << endl << "[2]пустой" << endl;
+		cout << "выберете тип: ";
+		cin >> menu;
+		switch (menu) {
+			//
+		case 1: {
+			system("cls");
+
+			cout << "заполненая четверть квадрата" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура: ";
+			cin >> tex;
+
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					if (y >= num1 / 2 && x >= num1 / 2){
+						cout << tex << " ";
+					}
+					else {
+						cout << "* ";
+					}
+				}
+				cout << endl;
+			}
+
+			break;
+		}
+			  //
+		case 2: {
+			system("cls");
+
+			cout << "пустая четверть квадрата" << endl;
+			cout << "размер: ";
+			cin >> num1;
+			cout << "текстура: ";
+			cin >> tex;
+
+			for (int y = 0; y < num1; y++) {
+				for (int x = 0; x < num1; x++) {
+					if (y == num1 - 1 && x >= num1 / 2 || x == num1 - 1 && y >= num1 / 2 || y >= num1 / 2 && x == num1 / 2 || x >= num1 / 2 && y == num1 / 2) {
+						cout << tex << " ";
+					}
+					else {
+						cout << "* ";
+					}
+				}
+				cout << endl;
+			}
+
+			break;
+		}
+		}
+		break;
+	}
+		   //четыре четверти
+	case 12: {
+
+	}
+		   //Выход
+	case 13: {
 		return 0;
 	}
 	default: {
